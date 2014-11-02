@@ -1,0 +1,8 @@
+{{genre.name}} 
+{% for genre in genre.syns %}
+  {{genre.name}}, 
+{% endfor %}
+<br/>
+{% for relation in genre.relations %}
+  {{relation.genre2.name}}, 
+{% endfor %}

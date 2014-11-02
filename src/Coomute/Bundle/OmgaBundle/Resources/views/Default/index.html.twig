@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+  {% for genre in genres %}
+  {% set genre_name = genre.name %}
+    {% if genre.relations is not defined %}
+      {% set genre = genre.genreId %}
+    {% endif %}
+    <a href="{{path('genre_full', {'id': genre.id})}}">{{genre_name}}</a>
+      {% if genre.metas|length > 0 %}
+        {% for meta in genre.metas %}
+        META :  {{ meta.meta.name }} 
+        {% endfor %}
+      {% endif %}
+        PARENTS : 
+        {% for relation in genre.relations %}
+          {% if relation.relType.id == 1 %}
+            {{ relation.genre2.name }}, 
+          {% endif %}
+        {% endfor %}
+    <br/>
+  {% endfor %}
+{% endblock body %}

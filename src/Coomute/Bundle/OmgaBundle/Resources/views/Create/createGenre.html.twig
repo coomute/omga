@@ -1,0 +1,6 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+<form action="{{path('create_genre')}}" method="post">
+  {{ form(form) }}
+</form>
+{% endblock body %}

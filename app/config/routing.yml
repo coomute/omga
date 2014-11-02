@@ -1,0 +1,5 @@
+coomute_omga:
+    resource: "@CoomuteOmgaBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
