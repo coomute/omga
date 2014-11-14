@@ -2,12 +2,10 @@
 
 namespace Coomute\Bundle\OmgaBundle\Controller;
 
-ini_set('max_execution_time', 300);
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-//BOUH 
 use  Coomute\Bundle\OmgaBundle\Entity\Genre;
 use  Coomute\Bundle\OmgaBundle\Form\GenreType;
 use  Coomute\Bundle\OmgaBundle\Form\MetaType;
@@ -55,10 +53,32 @@ class DefaultController extends Controller
      */
     public function genreFullAction($id)
     {
-      $em = $this->getDoctrine()->getEntitymanager();
+      $em = $this->getDoctrine()->getManager();
       $genre = $em->getRepository("CoomuteOmgaBundle:Genre")->findOneBy(array('id'=>$id));
       return array(
         'genre' => $genre,
+      );
+    }
+    /**
+    * @Route("genre/meta/{id}",name="genre_meta_list")
+     * @Template("CoomuteOmgaBundle:Default:index.html.twig")
+     */
+    public function genreMetaListAction($id)
+    {
+      $em = $this->getDoctrine()->getManager();
+      $query= $em->createQueryBuilder()
+                 ->select('genre')
+                 ->from('CoomuteOmgaBundle:Genre', 'genre') 
+                 ->leftjoin('genre.metas', 'meta', 'WITH', 'meta.genre = genre.id') 
+                 ->setParameters( ["id" => $id] )
+                 ->where( 'meta.meta = :id' )
+                 ->getQuery();
+
+      
+      
+      $genres = $query->getResult();
+      return array(
+        'genres' => $genres,
       );
     }
 }

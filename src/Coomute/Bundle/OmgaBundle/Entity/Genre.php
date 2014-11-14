@@ -85,7 +85,7 @@ class Genre
     private $yearMax;
     
     /**
-     * @ORM\OneToMany(targetEntity="MetaGenreRelation", mappedBy="genre")
+     * @ORM\OneToMany(targetEntity="MetaGenreRel", mappedBy="genre")
      */
     private $metas;
     /**
@@ -325,10 +325,10 @@ class Genre
     /**
      * Add metas
      *
-     * @param \Coomute\Bundle\OmgaBundle\Entity\MetaGenreRelation $metas
+     * @param \Coomute\Bundle\OmgaBundle\Entity\MetaGenreRel $metas
      * @return Genre
      */
-    public function addMeta(\Coomute\Bundle\OmgaBundle\Entity\MetaGenreRelation $metas)
+    public function addMeta(\Coomute\Bundle\OmgaBundle\Entity\MetaGenreRel $metas)
     {
         $this->metas[] = $metas;
 
@@ -338,9 +338,9 @@ class Genre
     /**
      * Remove metas
      *
-     * @param \Coomute\Bundle\OmgaBundle\Entity\MetaGenreRelation $metas
+     * @param \Coomute\Bundle\OmgaBundle\Entity\MetaGenreRel $metas
      */
-    public function removeMeta(\Coomute\Bundle\OmgaBundle\Entity\MetaGenreRelation $metas)
+    public function removeMeta(\Coomute\Bundle\OmgaBundle\Entity\MetaGenreRel $metas)
     {
         $this->metas->removeElement($metas);
     }

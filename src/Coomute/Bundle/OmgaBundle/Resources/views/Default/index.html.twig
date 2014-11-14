@@ -8,7 +8,8 @@
     <a href="{{path('genre_full', {'id': genre.id})}}">{{genre_name}}</a>
       {% if genre.metas|length > 0 %}
         {% for meta in genre.metas %}
-        META :  {{ meta.meta.name }} 
+        META :  
+        <a href="{{path('genre_meta_list', {'id': meta.meta.id})}}">{{meta.meta.name}}</a>
         {% endfor %}
       {% endif %}
         PARENTS : 

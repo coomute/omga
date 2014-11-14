@@ -1,3 +1,8 @@
+coomute_coouse:
+    resource: "@CoomuteCoouseBundle/Controller"
+    type:     annotation
+    prefix:   /
+
 coomute_omga:
     resource: "@CoomuteOmgaBundle/Controller/"
     type:     annotation

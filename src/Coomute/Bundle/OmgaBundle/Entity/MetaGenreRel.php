@@ -5,12 +5,12 @@ namespace Coomute\Bundle\OmgaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * MetaGenreRelation
+ * MetaGenreRel
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class MetaGenreRelation
+class MetaGenreRel
 {
     /**
      * @var integer
@@ -48,7 +48,7 @@ class MetaGenreRelation
      * Set meta
      *
      * @param integer $meta
-     * @return MetaGenreRelation
+     * @return MetaGenreRel
      */
     public function setMeta($meta)
     {
@@ -71,7 +71,7 @@ class MetaGenreRelation
      * Set genre
      *
      * @param integer $genre
-     * @return MetaGenreRelation
+     * @return MetaGenreRel
      */
     public function setGenre($genre)
     {

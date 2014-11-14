@@ -29,7 +29,7 @@ class Meta
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="MetaGenreRelation", mappedBy="meta")
+     * @ORM\OneToMany(targetEntity="MetaGenreRel", mappedBy="meta")
      */
     private $genres;
 
@@ -77,10 +77,10 @@ class Meta
     /**
      * Add genres
      *
-     * @param \Coomute\Bundle\OmgaBundle\Entity\MetaGenreRelation $genres
+     * @param \Coomute\Bundle\OmgaBundle\Entity\MetaGenreRel $genres
      * @return Meta
      */
-    public function addGenre(\Coomute\Bundle\OmgaBundle\Entity\MetaGenreRelation $genres)
+    public function addGenre(\Coomute\Bundle\OmgaBundle\Entity\MetaGenreRel $genres)
     {
         $this->genres[] = $genres;
 
@@ -90,9 +90,9 @@ class Meta
     /**
      * Remove genres
      *
-     * @param \Coomute\Bundle\OmgaBundle\Entity\MetaGenreRelation $genres
+     * @param \Coomute\Bundle\OmgaBundle\Entity\MetaGenreRel $genres
      */
-    public function removeGenre(\Coomute\Bundle\OmgaBundle\Entity\MetaGenreRelation $genres)
+    public function removeGenre(\Coomute\Bundle\OmgaBundle\Entity\MetaGenreRel $genres)
     {
         $this->genres->removeElement($genres);
     }

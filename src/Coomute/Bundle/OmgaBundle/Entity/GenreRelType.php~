@@ -5,12 +5,12 @@ namespace Coomute\Bundle\OmgaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * GenreRelType
+ * RelType
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class GenreRelType
+class RelType
 {
     /**
      * @var integer
@@ -47,7 +47,7 @@ class GenreRelType
      * Set relType
      *
      * @param string $relType
-     * @return GenreRelType
+     * @return RelType
      */
     public function setRelType($relType)
     {
@@ -77,7 +77,7 @@ class GenreRelType
      * Add relations
      *
      * @param \Coomute\Bundle\OmgaBundle\Entity\GenreRel $relations
-     * @return GenreRelType
+     * @return RelType
      */
     public function addRelation(\Coomute\Bundle\OmgaBundle\Entity\GenreRel $relations)
     {

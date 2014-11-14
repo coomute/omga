@@ -34,7 +34,7 @@ class GenreRel
     private $genre2;
 
     /**
-      * @ORM\ManyToOne(targetEntity="GenreRelType", inversedBy="genres")
+      * @ORM\ManyToOne(targetEntity="RelType", inversedBy="genres")
       * @ORM\JoinColumn(name="rel_type_id", referencedColumnName="id")
     **/
     private $relType;
@@ -168,10 +168,10 @@ class GenreRel
     /**
      * Set relType
      *
-     * @param \Coomute\Bundle\OmgaBundle\Entity\GenreRelType $relType
+     * @param \Coomute\Bundle\OmgaBundle\Entity\RelType $relType
      * @return GenreRel
      */
-    public function setRelType(\Coomute\Bundle\OmgaBundle\Entity\GenreRelType $relType = null)
+    public function setRelType(\Coomute\Bundle\OmgaBundle\Entity\RelType $relType = null)
     {
         $this->relType = $relType;
 
@@ -181,7 +181,7 @@ class GenreRel
     /**
      * Get relType
      *
-     * @return \Coomute\Bundle\OmgaBundle\Entity\GenreRelType 
+     * @return \Coomute\Bundle\OmgaBundle\Entity\RelType 
      */
     public function getRelType()
     {
